@@ -45,7 +45,8 @@ contract Licitacao {
         // A linha abaixo verifica se na hora na criação a instituição colocou seu nome no contrato
         // caso contrário o contrato não será gravado no blockchain, e será cobrada somente a taxa de gas
         // que deu origem a solicitação.
-        require(keccak256(abi.encodePacked(_instituicao)) != keccak256(abi.encodePacked("")), unicode"É necessário a indentificação da instituição para implantar esse contrato");
+        require(keccak256(abi.encodePacked(_instituicao)) != keccak256(abi.encodePacked("")),
+        unicode"É necessário a indentificação da instituição para implantar esse contrato");
         // Grava o nome enviado na variável instituicaoDonaDaLicitacao
         instituicaoDonaDaLicitacao = _instituicao;
         //Grava o endereço da conta que deu origem ao envio do contrato na variável contaDaInstituicaoGovernamental
